@@ -40,6 +40,10 @@ app.get("/file/:filename", (req, res) => {
   });
 });
 
+app.all("*", (req, res) => {
+  res.status(404).send("Route not found");
+});
+
 // just for testing purposes
 // app. listen(3000, () => {
 //   console.log("listening on port 3000");
